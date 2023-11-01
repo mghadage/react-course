@@ -1,7 +1,5 @@
 ## Assignment Screenshots
 
-![App Screenshot](./src/assets/Screenshot.png)
-
 #### What is JSX
 
 JSX (JavaScript XML) is an extension to the JavaScript language that allows you to write HTML-like code within your JavaScript code. It's commonly used with libraries like React to describe the structure and appearance of user interfaces. JSX provides a more readable and concise way to create and manipulate the DOM elements compared to using JavaScript methods directly.
