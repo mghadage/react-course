@@ -34,16 +34,30 @@ const Header = () => {
 }
 
 
-const RestaurantCard = () => {
+const RestaurantCard = (props) => {
+
+    const {resName,courisal,avgRating,costForTwo,deliveryTime} = props.restData;
+
     return (
         <div className="restaurant-card" style={{backgroundColor: "#f0f0f0"}} >
             <img className="res-logo" alt="res-logo" src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/e33e1d3ba7d6b2bb0d45e1001b731fcf" />
-            <h3>Burger King</h3>
-            <h4>Burgers,American, Kandiwali West</h4>
-            <h4>4.5 Stars</h4>
+            <h3>{resName}</h3>
+            <h4>{courisal}</h4>
+            <h4>{avgRating} Stars</h4>
+            <h4>₹{costForTwo / 100} FOR TWO </h4>
+            <h4>{deliveryTime} Minutes</h4>
         </div>
     );
 };
+
+const restList = [
+                    {id:"1",resName:"Burger King",courisal:"Burgers,American, Kandiwali West",avgRating:"4.5",costForTwo:"40000",deliveryTime:"30"},
+                    {id:"2",resName:"KFC",courisal:"Burgers, Ulwe, Navi Mumbai",avgRating:"4.0",costForTwo:"20000",deliveryTime:"10"},
+                    {id:"3",resName:"Sardarjis Kichan",courisal:"Biryani, Sector 17, Ulwe",avgRating:"3.8",costForTwo:"30000",deliveryTime:"20"},
+                    {id:"4",resName:"Roti Boti",courisal:"Roti Boti, Sector 16, Ulwe",avgRating:"4.7",costForTwo:"50000",deliveryTime:"15"},
+                ];
+
+// not use key <<<<< use index as key <<<<<<<<<<<<<<<<<< use unique id as key
 
 const Body = () => {
     return (
@@ -52,18 +66,9 @@ const Body = () => {
                 Search
            </div>
            <div className="restaurant-comtainer"> 
-            <RestaurantCard />
-            <RestaurantCard />
-            <RestaurantCard />
-            <RestaurantCard />
-            <RestaurantCard />
-            <RestaurantCard />
-            <RestaurantCard />
-            <RestaurantCard />
-            <RestaurantCard />
-            <RestaurantCard />
-            <RestaurantCard />
-            <RestaurantCard />
+            {
+                restList.map((restaurant) => (<RestaurantCard key={restaurant.id} restData={restaurant}  />))
+            }
            </div>
         </div>
     );
