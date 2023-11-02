@@ -1,0 +1,32 @@
+{
+  "name": "episode-03-laying-the-foundation",
+  "version": "1.0.0",
+  "description": "Library:",
+  "main": "App.js",
+  "scripts": {
+    "start":"parcel index.html",
+    "build":"parcel build index.html",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mghadage/react-course.git"
+  },
+  "author": "Mahesh Ghadage",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mghadage//react-course/issues"
+  },
+  "homepage": "https://github.com/mghadage/react-course#readme",
+  "devDependencies": {
+    "parcel": "^2.10.1",
+    "process": "^0.11.10"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "browserslist": [
+    "last 2 versions"
+  ]
+}
