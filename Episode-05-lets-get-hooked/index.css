@@ -50,3 +50,15 @@
 .restaurant-card:hover {
     border: 1px solid black;
 }
+
+.filter-btn {
+    margin: 10px;
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
