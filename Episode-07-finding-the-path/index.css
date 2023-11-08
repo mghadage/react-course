@@ -1,0 +1,92 @@
+/* .app{
+    margin-left: 100px;
+    margin-right: 100px;
+} */
+
+.header{
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid black;
+}
+
+.logo{
+    width: 100px;
+    margin-left: 10px;
+}
+
+.nav-items {
+    padding: 0px 20px;
+}
+
+.nav-items > ul {
+    display: flex;
+    list-style-type: none;
+}
+.nav-items >ul > li {
+    padding: 10px;
+    margin: 10px;
+} 
+
+.search-container {
+    margin: 10px;
+}
+
+.restaurant-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.restaurant-card {
+    margin: 4px;
+    padding: 5px;
+    width: 200px;
+}
+
+.res-logo {
+    width: 200px;
+    height: 150px;
+}
+
+.restaurant-card:hover {
+    border: 1px solid black;
+}
+
+/* .filter-btn { */
+    /* margin: 10px; */
+    /* background-color: #4CAF50; Green */
+    /* border: none; */
+    /* color: white; */
+    /* padding: 10px; */
+    /* text-align: center; */
+    /* text-decoration: none; */
+    /* display: inline-block; */
+    /* font-size: 16px; */
+/* } */
+
+
+.shimmer-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.shimmer-card {
+    width: 200px;
+    height: 400px;
+    background-color: #f0f0f0;
+    margin: 10px;
+}
+
+.login-btn {
+    
+    padding: 10px 20px;
+    background-color: rebeccapurple;
+}
+
+.search-container {
+    display: flex;
+    padding: 10px;
+}
+
+.search-btn {
+    margin-right: 20px;
+}
