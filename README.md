@@ -11,6 +11,10 @@ This project is my hands-on learning experience with React. I'm breaking down my
 - [Episode 1: Inception](./episode1)
 - [Episode 2: Igning our app](./episode2)
 - [Episode 3: Laying the foundation](./episode3)
+- [Episode 4: Talk is cheap show me the code](./episode3)
+- [Episode 5: Lets get hooked](./episode3)
+- [Episode 6: Exploring the world](./episode3)
+- [Episode 7: Finding the path](./episode3)
 - coming soon..
 
 Each episode folder contains the code and documentation related to that specific topic. Feel free to explore and learn alongside me!
