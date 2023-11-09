@@ -1,5 +1,5 @@
 
-## Questions & Answer
+# Assignment
 
 #### Q1. Is JSX mandatory for React ?
 
