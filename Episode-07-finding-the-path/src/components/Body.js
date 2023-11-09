@@ -1,7 +1,7 @@
 import RestaurantCard from "./RestaurantCard";
 import { useEffect, useState } from "react";
 import CardShimmer from "./CardShimmer";
-
+import { Link } from "react-router-dom";
 
 
 // not use key <<<<< use index as key <<<<<<<<<<<<<<<<<< use unique id as key
@@ -45,7 +45,7 @@ const Body = () => {
            </div>
            <div className="restaurant-container"> 
             {
-                filteredListOfRestaurant.map((restaurant) => (<RestaurantCard key={restaurant.info.id} restData={restaurant}  />))
+                filteredListOfRestaurant.map((restaurant) => (<Link to={ "/restaurants/"+restaurant.info.id}><RestaurantCard key={restaurant.info.id} restData={restaurant}  /></Link>))
             }
            </div>
         </div>
