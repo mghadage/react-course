@@ -1,8 +1,26 @@
 # Assignment
 
-#### Q1. What is the order of lifecycle method calls in class based components?
+#### Q1. How do you create Nested Routes react-router-dom cofiguration?
 
-![Screenshot](./Screenshot.png)
+We create Nested Routes like this
+
+```jsx
+  const appRouter = createBrowserRouter([
+  {
+      path: '/', element: <AppLayout />, children: [
+      { path: '/', element: <Body /> },
+      { path: '/about', element: <About /> },
+      { path: '/contact', element: <Contact /> },
+      { path: '/restaurant/:resId', element: <RestaurantMenu /> }
+      ], errorElement: <Error />
+  },
+
+  ])
+```
+
+#### Q2. What is the order of lifecycle method calls in class based components?
+
+![Screenshot](./class-based-component-life-cycle.png)
 
 **Mounting**
 
@@ -25,7 +43,7 @@ This method is called when a component is being removed from the DOM:
 
 - componentWillUnmount()
 
-#### Q2. Why do we use componentDidMount, componentDidUpdate & componentWillUnmount
+#### Q3. Why do we use componentDidMount, componentDidUpdate & componentWillUnmount
 
 `componentDidMount`, `componentDidUpdate`, and `componentWillUnmount` are lifecycle methods in class-based React components. They allow you to perform specific actions at different stages of a component's lifecycle.
 
@@ -67,7 +85,7 @@ This method is called when a component is being removed from the DOM:
 
 It's important to note that with the introduction of functional components and React hooks, you can achieve similar functionality with hooks like `useEffect`. Functional components with hooks have become the preferred way of managing component lifecycle and side effects in modern React applications, making the code more concise and easier to reason about.
 
-#### Q3. Why do we ude super(props)?
+#### Q4. Why do we use super(props) in constructor?
 
 In a class-based component in React, `super(props)` is used to call the constructor of the parent class, which in this case is `Component` from React's core library. The `super(props)` call is typically the first statement inside the constructor of a class-based component.
 
