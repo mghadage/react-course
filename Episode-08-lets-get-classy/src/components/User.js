@@ -2,7 +2,7 @@ import { useState } from "react";
 
 const User = (props) => {
 
-    const [count] = useState(0);
+    const [count,] = useState(0);
     const [count1] = useState(1);
     const {name,email} = props;
     return (
