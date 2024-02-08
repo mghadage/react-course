@@ -2,6 +2,7 @@ import RestaurantCard from "./RestaurantCard";
 import { useEffect, useState } from "react";
 import CardShimmer from "./CardShimmer";
 import { Link } from "react-router-dom";
+import useOnlineStatus from "../utils/useOnlineStatus";
 
 
 // not use key <<<<< use index as key <<<<<<<<<<<<<<<<<< use unique id as key
@@ -23,6 +24,9 @@ const Body = () => {
         setFilteredListOfRestaurant(json.data.cards[4].card.card.gridElements.infoWithStyle.restaurants);
     }
 
+    const onlineStatus = useOnlineStatus();
+
+    if(onlineStatus === false) return <h1>Looks like your Offline!! Please check your internet conection</h1>;
 
     // conditional rendering = redering on the basis of condition 
 
