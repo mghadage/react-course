@@ -10,9 +10,9 @@ const RestaurantCard = (props) => {
 
     return (
         
-        <div className="restaurant-card" style={{backgroundColor: "#f0f0f0"}} >
-            <img className="res-logo" alt="res-logo" src={CDN_URL+cloudinaryImageId} />
-            <h2>{name}</h2>
+        <div className="h-96 m-2 p-4 w-[245px] bg-gray-100 rounded-lg hover:bg-gray-200">
+            <img className="w-56 h-40 rounded-lg" alt="res-logo" src={CDN_URL+cloudinaryImageId} />
+            <h2 className="font-bold py-4 text-lg">{name}</h2>
             <h3>{avgRating}/5</h3>
             <h4>{cuisines.join(", ")}</h4>
             <h4>{areaName}</h4>

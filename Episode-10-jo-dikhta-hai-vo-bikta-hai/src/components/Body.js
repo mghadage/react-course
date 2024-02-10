@@ -31,24 +31,29 @@ const Body = () => {
     // conditional rendering = redering on the basis of condition 
 
     return listOfRestaurant.length == 0 ? <CardShimmer /> : (
-        <div className="body">
-           <div className="filter-container">
-            <div className="search-container">
-                <input type="text" className="search-inputbox" value={searchText} onChange={(e) => {
-                    setSearchText(e.target.value);
-                }} />
-                <button className="search-btn" onClick={() => {
-                    const filteredData = listOfRestaurant.filter((res) => res.info.name.toLowerCase().includes(searchText.toLowerCase()));
-                    setFilteredListOfRestaurant(filteredData);
-                }}>search</button>
+        <div className="container mx-auto px-24">
+            <div className="flex">
+                
+                <div className="m-2 p-4">
+                    <input type="text" placeholder="Search..." className="border border-solid bg-white h-10 px-5 pr-10 mt-4 rounded-full text-sm focus:outline-none" value={searchText} onChange={(e) => {
+                        setSearchText(e.target.value);
+                    }} />
 
-                <button className="filter-btn" onClick={() => {
-                    const filteredData = listOfRestaurant.filter((res) => res.info.avgRating > 4);
-                    setFilteredListOfRestaurant(filteredData);
-                }}>Top Rated Restaurant</button>
+                    <button className="px-4 py-2 bg-green-400 m-4 rounded-lg" onClick={() => {
+                        const filteredData = listOfRestaurant.filter((res) => res.info.name.toLowerCase().includes(searchText.toLowerCase()));
+                        setFilteredListOfRestaurant(filteredData);
+                    }}>search</button>
+
+                    
+                </div>
+                <div className="m-2 p-2 flex items-center">
+                    <button className="px-4 py-2 bg-gray-400 rounded-lg" onClick={() => {
+                            const filteredData = listOfRestaurant.filter((res) => res.info.avgRating > 4);
+                            setFilteredListOfRestaurant(filteredData);
+                        }}>Top Rated Restaurant</button>
+                </div>
             </div>
-           </div>
-           <div className="restaurant-container"> 
+           <div className="flex flex-wrap "> 
             {
                 filteredListOfRestaurant.map((restaurant) => (<Link to={ "/restaurants/"+restaurant.info.id}><RestaurantCard key={restaurant.info.id} restData={restaurant}  /></Link>))
             }
