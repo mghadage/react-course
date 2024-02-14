@@ -1,4 +1,4 @@
-import RestaurantCard from "./RestaurantCard";
+import RestaurantCard, { withOfferLabel } from "./RestaurantCard";
 import { useEffect, useState } from "react";
 import CardShimmer from "./CardShimmer";
 import { Link } from "react-router-dom";
@@ -23,6 +23,8 @@ const Body = () => {
         setListOfRestaurant(json.data.cards[4].card.card.gridElements.infoWithStyle.restaurants);
         setFilteredListOfRestaurant(json.data.cards[4].card.card.gridElements.infoWithStyle.restaurants);
     }
+
+    const RestaurantCardWithOffer = withOfferLabel(RestaurantCard);
 
     const onlineStatus = useOnlineStatus();
 
@@ -54,9 +56,13 @@ const Body = () => {
                 </div>
             </div>
            <div className="flex flex-wrap "> 
-            {
-                filteredListOfRestaurant.map((restaurant) => (<Link to={ "/restaurants/"+restaurant.info.id}><RestaurantCard key={restaurant.info.id} restData={restaurant}  /></Link>))
-            }
+           {filteredListOfRestaurant.map((restaurant) => (
+                <Link to={"/restaurants/" + restaurant.info.id} key={restaurant.info.id}>
+                    {(restaurant.info.aggregatedDiscountInfoV2 == undefined) ? <RestaurantCardWithOffer restData={restaurant} /> : <RestaurantCard restData={restaurant} />}
+                    {console.log('data=',restaurant.info.aggregatedDiscountInfoV3) }
+                
+                </Link>
+            ))}
            </div>
         </div>
     );
