@@ -1,8 +1,9 @@
 import RestaurantCard, { withOfferLabel } from "./RestaurantCard";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import CardShimmer from "./CardShimmer";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
+import UserContext from "../utils/UserContext";
 
 
 // not use key <<<<< use index as key <<<<<<<<<<<<<<<<<< use unique id as key
@@ -27,6 +28,9 @@ const Body = () => {
     const RestaurantCardWithOffer = withOfferLabel(RestaurantCard);
 
     const onlineStatus = useOnlineStatus();
+
+
+    const { loggedInUser, setUserName } = useContext(UserContext);
 
     if(onlineStatus === false) return <h1>Looks like your Offline!! Please check your internet conection</h1>;
 
@@ -53,6 +57,12 @@ const Body = () => {
                             const filteredData = listOfRestaurant.filter((res) => res.info.avgRating > 4);
                             setFilteredListOfRestaurant(filteredData);
                         }}>Top Rated Restaurant</button>
+                </div>
+
+                <div className="m-2 p-2 flex items-center">
+                    <input type="text" className="border border-solid bg-white h-10 px-5 pr-10 mt-4 rounded-full text-sm focus:outline-none" value={loggedInUser} onChange={(e) => {
+                        setUserName(e.target.value);
+                    }} />
                 </div>
 
 
