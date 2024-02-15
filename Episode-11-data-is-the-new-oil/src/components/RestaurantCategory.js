@@ -1,16 +1,14 @@
 import { useState } from "react";
 import ItemList from "./ItemList";
 
-const RestaurantCategory = ({data}) => {
-    console.log(data);
-    const [showItems, setShowItems] = useState(false);
+const RestaurantCategory = ({data, showItems, setShowIndex}) => {
 
+    console.log(data);
     const handleClick = () => {
-        setShowItems(!showItems);
+        setShowIndex();
     }
 
     return(
-        // <div className="w-6/12 bg-gray-50 my-4 m-auto p-4 shadow-lg">
         <div className="w-7/12 my-4 m-auto p-4 border-b-8 border-gray-200">
             <div className="flex justify-between cursor-pointer" onClick={handleClick}>
                 <span className="font-bold text-lg pl-2">{data.title} ({data.itemCards.length})</span>
