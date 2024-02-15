@@ -3,13 +3,16 @@ import CardShimmer from "./CardShimmer";
 import { useParams } from "react-router-dom";
 import useRestaurantMenu from "../utils/useRestaurantMenu";
 import RestaurantCategory from "./RestaurantCategory";
-import { useState } from "react";
+import { useContext, useState } from "react";
+import UserContext from "../utils/UserContext";
 
 const RestaurantMenu = () => {
 
     const { resId } = useParams();
     const resInfo = useRestaurantMenu(resId);
     const [showItems, setShowIndex] = useState(null);
+    const {loggedInUser} = useContext(UserContext); 
+    console.log(loggedInUser);
 
     if(resInfo == null) 
     {
