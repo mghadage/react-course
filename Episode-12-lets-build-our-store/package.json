@@ -1,0 +1,37 @@
+{
+  "name": "episode-12-lets-build-our-store",
+  "version": "1.0.0",
+  "description": "Library:",
+  "main": "App.js",
+  "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mghadage/react-course.git"
+  },
+  "author": "Mahesh Ghadage",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mghadage//react-course/issues"
+  },
+  "homepage": "https://github.com/mghadage/react-course#readme",
+  "devDependencies": {
+    "parcel": "^2.10.1",
+    "postcss": "^8.4.35",
+    "process": "^0.11.10",
+    "tailwindcss": "^3.4.1"
+  },
+  "dependencies": {
+    "@reduxjs/toolkit": "^2.2.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-redux": "^9.1.0",
+    "react-router-dom": "^6.18.0"
+  },
+  "browserslist": [
+    "last 2 versions"
+  ]
+}
