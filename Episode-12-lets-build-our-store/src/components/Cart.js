@@ -19,7 +19,6 @@ const Cart = () => {
                 { cartItems.length == 0 && <h1 className="mt-8">Cart is empty. Add items to the cart!</h1>}
                 <ItemList items={cartItems} />
             </div>
-            
         </div>
     );
 };
